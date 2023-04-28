@@ -1,0 +1,41 @@
+{% extends "stock/base.html" %}
+
+{% block head-content %}List by category{% endblock head-content %}
+
+{% block content_title %}<h2>List by category</h2>{% endblock content_title %}
+
+{% block content %}
+
+<h3>
+  Filter for: 
+  {% for state in all_states %}
+    <a href={% url 'stock:list-by-category-filter' category state %}>{{ state }}</a>
+  {% endfor %}
+</h3>
+
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Item</th>
+          <th>State</th>
+          <th>Date of stock</th>
+          <th>Location</th>
+        </tr>
+        
+        {% for item in all_items_data %}
+        {% if item.category == category %}
+        <tr>
+          <td>{{ item.id }}</td>
+          <td><a href={% url 'stock:search' item.category %}>{{ item.category }}</a></td>
+          <td>{{ item.state }}</td>
+          <td>{{ item.date_of_stock }}</td>
+          <td>{{ item.warehouse }}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+      
+      </table> 
+      
+
+  <br><h2><a href={% url 'stock:all-categories' %}>Back to all categories</a></h2>
+{% endblock content %}

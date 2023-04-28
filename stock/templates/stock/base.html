@@ -1,0 +1,12 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'stock/style.css' %}">
+<head>
+    <title>{% block head-content %}{% endblock head-content %}</title>
+</head>
+    {% block nav %}{% include 'stock/navbar.html' %}{% endblock nav %}
+    {% block content_title %}{% endblock content_title %}
+    {% block content %}{% endblock content %}
+</body>
+</html>

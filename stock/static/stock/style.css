@@ -1,0 +1,12 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+table, th, td {
+  width: 1200px;
+  border: 1px solid;
+  padding: 5px 5px 5px 5px;
+}
