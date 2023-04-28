@@ -1,3 +1,3 @@
-- Mapping to multiple apps and views (path/include/namespaces)
+- Mapping to multiple apps and views (path()/include() plus namespace)
 - Retrieving data from connected database 
 - Displaying data using render() and templates
